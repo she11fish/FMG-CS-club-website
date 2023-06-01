@@ -6,22 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orange</title>
     <style>
-        table,th,td{
+        table,th,td {
             border: 1px solid black;
-            border-collapse:collapse;
+            border-collapse: collapse;
         }
+
+        
+        @media (max-width: 748px) {
+          table > * {
+          font-size: 0.75rem;
+          }   
+        } 
+        
+        @media (max-width: 428px) {
+          table > * {
+          font-size: 0.65rem;
+          }   
+        } 
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="/scripts/pong_sketch.js" ></script>
 </head>
  <body style="background-color: rgb(169, 210, 243);">
    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0" style="font-family: 'Silkscreen', cursive;">
      <div class="container-fluid d-flex justify-content-around" style="background-color: rgb(108, 154, 240);">
-      <div class="nav-item navbar-brand" style="width: 10%;">
-        <a style="color: black;" href="#"><img src="../img/logo.png" style="width: 50%;"/></a>
-      </div>
+         <div class="nav-item navbar-brand">
+             <a class="nav-link" style="color: black;" href="#">Navbar</a>
+         </div>
          <div class="nav-item navbar-brand">
              <a class="nav-link" style="color: black;" href="#">Home</a>
          </div>
@@ -31,12 +48,12 @@
      </div>
    </nav>
      <div class="container d-flex flex-column align-items-center mt-4">
-         <h2 style="font-family: 'Silkscreen', cursive;">
+         <h2 style="font-family: 'Silkscreen', cursive; text-align: left;">
             My name is Carl - This is a website all about me
          </h2>
          <h4 style="font-family: 'Silkscreen', cursive;">My Photo:</h4>
-         <span class="border 1px border-dark">
-         <img src="../img/happy-smiling-young-asian-man-260nw-360416930.webp" width="560" height="400">
+         <span class="border 1px border-dark w-50">
+         <img class="w-100" src="../img/happy-smiling-young-asian-man-260nw-360416930.webp">
          </span>
          <audio id="sound1" src="../audio/Rick Astley - Never Gonna Give You Up (Official Music Video).mp3" preload="auto"></audio>
          <button type="button" class="btn btn-success mt-3" onclick="run_player()">Feelin' Lucky?</button>
@@ -45,16 +62,16 @@
             I'm currently reading a 1430 chapter mystery light novel, Lord of the Mysteries.
             I am one of three siblings and I was born in Abu Dhabi, UAE. 
          </p>
-         <div class="container">
+         <div class="container w-75" id="grid">
              <div class="row">
                <div class="col">
                  <h3>What I like:</h3>
                  <ul>
-                    <li>My Mom's spaghetti</li>
-                    <li>Sky diving</li>
-                    <li>Mount Everest</li>
-                    <li>Mangos</li>
-                    <li>The Chinese Government😀</li>
+                    <li class="w-50">My Mom's spaghetti</li>
+                    <li class="w-50">Sky diving</li>
+                    <li class="w-50">Mount Everest</li>
+                    <li class="w-50">Mangos</li>
+                    <li class="w-50">The Chinese Government😀</li>
                  </ul>
                </div>
                <div class="col">
@@ -70,37 +87,40 @@
                </div>
              </div>
          </div>
-         <table class="table table p-0">
-             <thead>
-               <tr>
-                 <th scope="col">Period</th>
-                 <th scope="col">Semester 1</th>
-                 <th scope="col">Semester 2</th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr>
-                 <th scope="row">1</th>
-                 <td>History(CHC2D1)</td>
-                 <td>Math(MPM2D1)</td>
-               </tr>
-               <tr>
-                 <th scope="row">2</th>
-                 <td>Intro to Business(BBI2O1)</td>
-                 <td>English(ENG2D1)</td>
-               </tr>
-               <tr>
-                 <th scope="row">3</th>
-                 <td>Civics and Careers(CHV2O1)</td>
-                 <td>Intro to Computer Science(ICS2O1)</td>
-               </tr>
-               <tr>
-                 <th scope="row">4</th>
-                 <td>Science(SNC2D1)</td>
-                 <td>Religion(HRE2O1)</td>
-               </tr>
-             </tbody>
-          </table>   
+        <div style="overflow-x:auto;">
+            <table class="table p-0 w-100">
+              <thead>
+                <tr>
+                  <th scope="col">Period</th>
+                  <th scope="col">Semester 1</th>
+                  <th scope="col">Semester 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>History(CHC2D1)</td>
+                  <td>Math(MPM2D1)</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Intro to Business(BBI2O1)</td>
+                  <td>English(ENG2D1)</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Civics and Careers(CHV2O1)</td>
+                  <td>Intro to Computer Science(ICS2O1)</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Science(SNC2D1)</td>
+                  <td>Religion(HRE2O1)</td>
+                </tr>
+              </tbody>
+          </table>
+          <h2 style="font-family: 'Silkscreen', cursive;">My Javascript Pong Game</h2>
+        </div>
      </div>
 </body>
 <script>

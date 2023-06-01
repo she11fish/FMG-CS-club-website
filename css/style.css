@@ -1,0 +1,12 @@
+main {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+canvas {
+    border: 5px solid black;
+    border-radius: 5px;
+    width: 75% !important;
+    height: 100% !important;
+}
